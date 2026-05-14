@@ -56,14 +56,20 @@ export default function ProfileHeader({
                 Save
               </button>
             )}
-            <button
-              type="button"
-              className="danger-button"
-              onClick={onDeleteAccountClick}
-              disabled={deleteAccountLoading}
-            >
-              {deleteAccountLoading ? "Deleting..." : "Delete Account"}
-            </button>
+            <div className="delete-account-panel">
+              <div className="delete-account-copy">
+                <p>Need to leave?</p>
+                <span>This permanently removes your profile and account data.</span>
+              </div>
+              <button
+                type="button"
+                className="danger-button"
+                onClick={onDeleteAccountClick}
+                disabled={deleteAccountLoading}
+              >
+                {deleteAccountLoading ? "Deleting..." : "Delete Account"}
+              </button>
+            </div>
           </>
         ) : (
           <button type="button" onClick={onFollowToggle}>
