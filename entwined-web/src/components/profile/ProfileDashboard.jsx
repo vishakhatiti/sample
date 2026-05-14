@@ -512,10 +512,30 @@ export default function ProfileDashboard({
       {showDeleteModal && (
         <div className="danger-modal-overlay" role="dialog" aria-modal="true">
           <div className="danger-modal">
-            <h3>Delete Account</h3>
+            <button
+              type="button"
+              className="danger-modal-close"
+              aria-label="Close delete confirmation"
+              onClick={() => setShowDeleteModal(false)}
+              disabled={deleteAccountLoading}
+            >
+              ×
+            </button>
+
+            <div className="danger-modal-header">
+              <div className="danger-modal-icon" aria-hidden="true">⚠</div>
+              <div>
+                <h3>Delete Account</h3>
+                <span className="danger-modal-badge">This action is permanent</span>
+              </div>
+            </div>
+
+            <div className="danger-modal-divider" />
+
             <p>
-              This action is permanent and cannot be undone. Deleting your account will remove your profile and related data.
+              Are you sure you want to delete your account? Deleting your account will remove your profile and related data.
             </p>
+
             <div className="danger-modal-actions">
               <button type="button" onClick={() => setShowDeleteModal(false)} disabled={deleteAccountLoading}>
                 Cancel
@@ -524,6 +544,11 @@ export default function ProfileDashboard({
                 {deleteAccountLoading ? "Deleting..." : "Yes, Delete My Account"}
               </button>
             </div>
+
+            <p className="danger-modal-footer" aria-live="polite">
+              <span aria-hidden="true">🔒</span>
+              Your data will be deleted permanently and cannot be recovered.
+            </p>
           </div>
         </div>
       )}
