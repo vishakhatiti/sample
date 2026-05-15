@@ -129,7 +129,7 @@ export default function ProfileHeader({
               />
             </div>
             <div className="profile-edit-modal-actions">
-              <button type="button" className="profile-edit-button" onClick={onEditToggle}>
+              <button type="button" className="profile-edit-cancel" onClick={onEditToggle}>
                 Cancel
               </button>
               <button type="button" onClick={onSaveProfile}>
