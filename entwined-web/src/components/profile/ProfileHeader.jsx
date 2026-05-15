@@ -48,7 +48,7 @@ export default function ProfileHeader({
       <div className="profile-header-actions">
         {isCurrentUser ? (
           <>
-            <button type="button" onClick={onEditToggle}>
+            <button type="button" className="profile-edit-button" onClick={onEditToggle}>
               {editing ? "Cancel" : "Edit Profile"}
             </button>
             {editing && (
