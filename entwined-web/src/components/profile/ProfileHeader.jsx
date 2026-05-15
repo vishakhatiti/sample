@@ -114,40 +114,52 @@ export default function ProfileHeader({
               </button>
             </div>
             <div className="profile-edit-grid">
-              <input
-                placeholder="Profile image URL"
-                value={draftProfile.profileImage}
-                onChange={(e) =>
-                  setDraftProfile((prev) => ({ ...prev, profileImage: e.target.value }))
-                }
-              />
-              <input
-                placeholder="Reading persona"
-                value={draftProfile.readingPersona}
-                onChange={(e) =>
-                  setDraftProfile((prev) => ({ ...prev, readingPersona: e.target.value }))
-                }
-              />
-              <textarea
-                placeholder="Bio"
-                value={draftProfile.bio}
-                onChange={(e) =>
-                  setDraftProfile((prev) => ({ ...prev, bio: e.target.value }))
-                }
-              />
-              <input
-                placeholder="Favorite genres (comma separated)"
-                value={draftProfile.favoriteGenres}
-                onChange={(e) =>
-                  setDraftProfile((prev) => ({ ...prev, favoriteGenres: e.target.value }))
-                }
-              />
+              <label className="profile-edit-field">
+                <span>Profile Image URL</span>
+                <input
+                  placeholder="Profile image URL"
+                  value={draftProfile.profileImage}
+                  onChange={(e) =>
+                    setDraftProfile((prev) => ({ ...prev, profileImage: e.target.value }))
+                  }
+                />
+              </label>
+              <label className="profile-edit-field">
+                <span>Reading Persona</span>
+                <input
+                  placeholder="Reading persona"
+                  value={draftProfile.readingPersona}
+                  onChange={(e) =>
+                    setDraftProfile((prev) => ({ ...prev, readingPersona: e.target.value }))
+                  }
+                />
+              </label>
+              <label className="profile-edit-field profile-edit-field-full">
+                <span>Bio</span>
+                <textarea
+                  placeholder="Bio"
+                  value={draftProfile.bio}
+                  onChange={(e) =>
+                    setDraftProfile((prev) => ({ ...prev, bio: e.target.value }))
+                  }
+                />
+              </label>
+              <label className="profile-edit-field profile-edit-field-full">
+                <span>Favorite Genres</span>
+                <input
+                  placeholder="Favorite genres (comma separated)"
+                  value={draftProfile.favoriteGenres}
+                  onChange={(e) =>
+                    setDraftProfile((prev) => ({ ...prev, favoriteGenres: e.target.value }))
+                  }
+                />
+              </label>
             </div>
             <div className="profile-edit-modal-actions">
-              <button type="button" className="profile-edit-button" onClick={onEditToggle}>
+              <button type="button" className="profile-edit-cancel" onClick={onEditToggle}>
                 Cancel
               </button>
-              <button type="button" onClick={onSaveProfile}>
+              <button type="button" className="profile-edit-button" onClick={onSaveProfile}>
                 Save Changes
               </button>
             </div>
