@@ -691,7 +691,7 @@
 .profile-header-actions button {
   border: none;
   border-radius: 10px;
-  padding: 10px 14px;
+  padding: 8px 14px;
   background: #2563eb;
   color: #fff;
   cursor: pointer;
@@ -699,12 +699,12 @@
 }
 
 .profile-header-actions > button {
-  min-height: 42px;
+  min-height: 38px;
 }
 
 .profile-edit-button {
-  min-height: 38px;
-  padding: 8px 14px;
+  min-height: 34px;
+  padding: 6px 14px;
   align-self: center;
 }
 
@@ -1795,8 +1795,8 @@
   }
 
   .profile-header-actions .profile-edit-button {
-    height: 40px;
-    min-height: 40px;
+    height: 36px;
+    min-height: 36px;
     align-self: stretch;
   }
 
@@ -2219,11 +2219,6 @@
 }
 
 @media (max-width: 900px) {
-  .delete-account-panel {
-    margin-left: 0;
-    width: 100%;
-  }
-
   .danger-modal {
     width: min(100%, 460px);
     padding: 18px;
