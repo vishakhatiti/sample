@@ -702,36 +702,6 @@
   min-height: 42px;
 }
 
-.delete-account-panel {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  max-width: 100%;
-  padding: 12px 14px;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  background: #ffffff;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
-}
-
-.delete-account-copy p {
-  margin: 0;
-  color: #0f172a;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.delete-account-copy span {
-  display: block;
-  margin-top: 4px;
-  color: #64748b;
-  font-size: 12px;
-  line-height: 1.5;
-  max-width: 46ch;
-}
 
 .profile-edit-grid {
   margin-top: 12px;
@@ -1793,22 +1763,6 @@ overflow: hidden;
 
     font-size: 14px;
   }
- .delete-account-panel {
-    margin-left: 0;
-    width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    padding: 12px;
-  }
-
-  .delete-account-copy span {
-    max-width: none;
-  }
-
-  .delete-account-panel .danger-button {
-    width: 100%;
-  }
 
   .danger-modal {
     border-radius: 16px;
@@ -2075,6 +2029,26 @@ overflow: hidden;
 
   overflow-x: hidden;
 }
+
+.delete-account-button {
+  background: #fee2e2 !important;
+  color: #b91c1c !important;
+  border: 1px solid #fecaca !important;
+  box-shadow: none !important;
+}
+
+.delete-account-button:hover:not(:disabled) {
+  background: #fecaca !important;
+  color: #991b1b !important;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .danger-modal {
+    width: min(100%, 460px);
+    padding: 18px;
+  }
+}
 .danger-button {
   background: #ef4444 !important;
   color: #fff !important;
@@ -2222,11 +2196,6 @@ overflow: hidden;
 }
 
 @media (max-width: 900px) {
-  .delete-account-panel {
-    margin-left: 0;
-    width: 100%;
-  }
-
   .danger-modal {
     width: min(100%, 460px);
     padding: 18px;
