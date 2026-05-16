@@ -385,7 +385,7 @@ export default function Chat() {
       {(mobileView === "list" || window.innerWidth > 768) && (
         <div className="chat-left-panel">
           <div className="chat-header">
-            <h2>Messages</h2>
+            <h2><span className="label-with-icon"><span className="ui-icon" aria-hidden="true">💬</span><span>Messages</span></span></h2>
             <button
               className="create-group-btn"
               onClick={() => setShowGroupModal(true)}
@@ -431,7 +431,7 @@ export default function Chat() {
           </div>
 
           <div className="friends-list">
-            <h3>Friends</h3>
+            <h3><span className="label-with-icon"><span className="ui-icon" aria-hidden="true">👥</span><span>Friends</span></span></h3>
             {friends.map((friend) => (
               <div
                 key={friend._id}

@@ -10,12 +10,12 @@ import ClubsTab from "./ClubsTab";
 import JournalPanel from "./JournalPanel";
 
 const tabs = [
-  "posts",
-  "library",
-  "reviews",
-  "activity",
-  "clubs",
-  "journal",
+  { key: "posts", label: "Posts", icon: "📝" },
+  { key: "library", label: "Library", icon: "📚" },
+  { key: "reviews", label: "Reviews", icon: "⭐" },
+  { key: "activity", label: "Activity", icon: "📈" },
+  { key: "clubs", label: "Clubs", icon: "👥" },
+  { key: "journal", label: "Journal", icon: "📔" },
 ];
 
 export default function ProfileDashboard({
@@ -417,16 +417,19 @@ export default function ProfileDashboard({
       <div className="profile-subtabs">
         {tabs.map((tab) => (
           <button
-            key={tab}
+            key={tab.key}
             type="button"
             className={
-              activeTab === tab
+              activeTab === tab.key
                 ? "tab-button active"
                 : "tab-button"
             }
-            onClick={() => setActiveTab(tab)}
+            onClick={() => setActiveTab(tab.key)}
           >
-            {tab[0].toUpperCase() + tab.slice(1)}
+            <span className="label-with-icon">
+              <span className="ui-icon" aria-hidden="true">{tab.icon}</span>
+              <span>{tab.label}</span>
+            </span>
           </button>
         ))}
       </div>
