@@ -132,7 +132,7 @@ export default function Dashboard() {
             className={`tab-button ${activeTab === "chat" ? "active" : ""}`}
             onClick={() => handleTabClick("chat")}
           >
-            Chat
+            <span className="label-with-icon"><span className="ui-icon" aria-hidden="true">💬</span><span>Messages</span></span>
           </button>
           <button
             className={`tab-button ${activeTab === "feed" ? "active" : ""}`}
@@ -144,7 +144,7 @@ export default function Dashboard() {
             className={`tab-button ${activeTab === "friends" ? "active" : ""}`}
             onClick={() => handleTabClick("friends")}
           >
-            Friends
+            <span className="label-with-icon"><span className="ui-icon" aria-hidden="true">👥</span><span>Friends</span></span>
           </button>
           <button
             className={`tab-button ${activeTab === "profile" ? "active" : ""}`}
@@ -184,7 +184,7 @@ export default function Dashboard() {
           <div className="dashboard-card">
             <div className="friends-main-panel">
               <div className="friends-section">
-                <h2>Search Users</h2>
+                <h2><span className="label-with-icon"><span className="ui-icon" aria-hidden="true">🔎</span><span>Search Users</span></span></h2>
                 <input
                   className="search-input"
                   placeholder="Search username..."
@@ -204,7 +204,7 @@ export default function Dashboard() {
               </div>
 
               <div className="friends-section">
-                <h2>Incoming Requests</h2>
+                <h2><span className="label-with-icon"><span className="ui-icon" aria-hidden="true">📥</span><span>Incoming Requests</span></span></h2>
                 {incoming.length > 0 ? (
                   incoming.map((req) => (
                     <div key={req._id} className="user-result">
@@ -219,7 +219,7 @@ export default function Dashboard() {
             </div>
 
             <div className="friends-side-panel">
-              <h2>Friends</h2>
+              <h2><span className="label-with-icon"><span className="ui-icon" aria-hidden="true">👥</span><span>Friends</span></span></h2>
               {friends.length > 0 ? (
                 friends.map((friend) => (
                   <div
